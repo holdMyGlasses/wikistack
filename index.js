@@ -3,6 +3,7 @@ const morgan=require("morgan");
 const app=express();
 const morg =morgan();
 
+const layout = require ("./views/layout.js")
 app.use(morgan("dev"));
 app.use(express.static(__dirname + "/public"));
 
@@ -10,8 +11,8 @@ app.use(express.static(__dirname + "/public"));
 app.use(express.urlencoded({ extended: false }));
 
 app.get ('/',(req, res)=> {
-   res.send ("Hello world");
-    res.send ("");
+   //res.send ("Hello world");
+    res.send (layout(''));
 } )
 
 
