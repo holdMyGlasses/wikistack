@@ -19,7 +19,11 @@ const synchro = async() => {
 
   await Page.sync();
   await User.sync();
-console.log("user and page NOT HEREE", user, page)
+
+  app.get('/', (req, res, next) => {
+    res.send('Welcome Hom');
+  });
+
 const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`App listening in port ${PORT}`);
